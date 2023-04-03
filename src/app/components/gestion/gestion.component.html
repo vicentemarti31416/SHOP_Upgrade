@@ -1,0 +1,51 @@
+<main class="main__container">
+    <div class="gestion__container">
+        <div class="gestion__container--left">
+            <h3 *ngIf="!product.id else elseBlockTitle" class="title">Creación de productos</h3>
+            <ng-template #elseBlockTitle>
+                <h3 class="title">Actualización de productos</h3>
+            </ng-template>
+            <form class="form__container">
+                <div class="name form-input">
+                    <label for="name">Nombre del producto:</label>
+                    <input type="text" id="name" name="name" [(ngModel)]="product.name" placeholder="Por ej: Tiesto para planta">
+                </div>
+                <div class="price form-input">
+                    <label for="price">Precio:</label>
+                    <input type="number" id="price" name="price" [(ngModel)]="product.price" placeholder="Por ej: 9,5€">
+                </div>
+                <div class="description form-input">
+                    <label for="description">Descripción:</label>
+                    <input type="text" id="description" name="description" [(ngModel)]="product.description" placeholder="Por ej: Lo más vendido este mes">
+                </div>
+                <div class="stars form-input">
+                    <label for="stars">Stars:</label>
+                    <input type="text" id="stars" name="stars" [(ngModel)]="product.stars" placeholder="Por ej: Dale una puntuación adecuada">
+                </div>
+                <div class="image form-input">
+                    <label for="image">Ruta de la imagen:</label>
+                    <input type="text" id="image" name="image" name="image" [(ngModel)]="product.image" placeholder="Por ej: http://blabla.com/img.jpg">
+                </div>
+                <div class="button__container">
+                    <button (click)="save()" *ngIf="!product.id else elseBlockButton" class="guardar">Guardar</button>
+                    <ng-template #elseBlockButton>
+                        <button (click)="update()" *ngIf="product.id" class="guardar">Editar</button>
+                    </ng-template>
+                </div>
+            </form>
+        </div>
+        <div class="gestion__container--right">
+            <div *ngIf="product.id" class="card__container">
+                <img src="{{ product.image }}" alt="">
+                <p class="name">{{ product.name }}</p>
+                <p class="price">€{{ product.price }}</p>
+                <p class="description">{{ product.description }}</p>
+                <div class="rating__container">
+                    <ng-container *ngFor="let i of stars">
+                        <i class="fa-solid fa-star" [ngClass]="{'active': i <= product.stars}"></i>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

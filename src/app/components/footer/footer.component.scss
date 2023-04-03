@@ -1,0 +1,40 @@
+footer {
+    max-width: calc(100vw - var(--scrollbar));
+    height: 280px;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .follow {
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+
+        li {
+            list-style-type: none;
+            padding: 0 2rem;
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-weight: 700;
+            }
+        }
+
+        .line {
+            border-right: 1px solid white;
+        }
+    }
+
+    .copy {
+        margin: 3rem 0;
+    }
+}

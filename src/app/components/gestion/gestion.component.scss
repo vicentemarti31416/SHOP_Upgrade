@@ -1,0 +1,116 @@
+.main__container {
+    max-width: calc(100vw - var(--scrollbar));
+    min-height: 100vh;
+    background-color: #cccccc;
+    padding-top: 79px;
+    padding-bottom: 79px;
+    font-family: 'Inter', sans-serif;
+    
+    .gestion__container {
+        max-width: 1200px;
+        height: auto;
+        margin: auto;
+        background-color: white;
+        border-radius: 10px;
+        padding: 3rem 2rem 5rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        .gestion__container--left {
+
+            .title {
+                font-weight: 700;
+                font-size: 24px;
+            }
+    
+            .form__container {
+                width: 518px;
+                margin: 3rem 0;
+        
+                .form-input {
+                    margin: 1.2rem 0;
+                    display: block;
+                    flex-direction: column;
+        
+                    label {
+                        display: block;
+                        width: 100%;
+                        margin: 1rem 0;
+                        font-weight: 700;
+                    }
+        
+                    input {
+                        display: block;
+                        width: 100%;
+                        padding: .5rem 1rem;
+                        border: 1px solid #666666;
+                        border-radius: 3px;
+                    }
+                }
+        
+                .button__container {
+                    display: flex;
+                    justify-content: flex-end;
+        
+                    button {
+                        background-color: #f89f21;
+                        color: white;
+                        border: none;
+                        border-radius: 3px;
+                        padding: .5rem 2rem;
+                    }
+                }
+            }
+        }
+
+        .gestion__container--right {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+    
+            .card__container {
+                width: 259px;
+                border-left: 1px solid #f89f21;
+                padding-left: 7rem;
+    
+                .name {
+                    font-weight: 400;
+                    margin: .75rem 0;
+                }
+    
+                .price {
+                    font-weight: 900;
+                    font-size: 26px;
+                    margin: .75rem 0;
+                }
+    
+                .description {
+                    font-weight: 300;
+                    margin: .75rem 0;
+                }
+    
+                img {
+                    max-width: 227px;
+                    height: auto;
+                }
+    
+                .rating__container {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 1rem 0;
+    
+                    i {
+                        color: #999999;
+                        cursor: pointer;
+                    }
+    
+                    .active {
+                        color: orange;
+                    }
+                }
+            }
+        }
+    }
+}
